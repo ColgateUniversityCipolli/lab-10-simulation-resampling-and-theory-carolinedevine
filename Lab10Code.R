@@ -98,11 +98,6 @@ dat.gallup <- tibble(id = 1:samp.size,
                                    rep("no opinion", round(perc.no.opinion*samp.size)))
                     )
 
-#dat.gallup |>
-#  summarize(
-#    proportion.sat = mean(response == "satisfied")
-#  )
-
 R <- 1000 # number of resamples
 resamples <- tibble(p.hat = numeric(R))
 for (i in 1:R){
@@ -122,4 +117,49 @@ resample.plot <- ggplot(resamples) +
   ylab("Density")+
   ggtitle("Resampling Distribution of "~hat(p))
 
+
+re.quant <- quantile(resamples$p.hat, probs = c(0.025, 0.975))
+re.range.middle <- re.quant[2] - re.quant[1]
+re.margin.error <- re.range.middle / 2
+
+# Table for Resamples
+table2 <- tibble(
+  `Sample Size` = 1004,
+  `Range of middle 95%` = re.range.middle, 
+  `Margin of Error` = re.margin.error
+)
+
+################################################################################
+# Part 3: Simulation over n and p
+################################################################################
+nvalues <- seq(100, 3000, by = 10)
+pvalues <- seq(0.01, 0.99, by = 0.01)
+polls <- 10000 # 10,000 simulations
+
+new.results <- tibble(n = numeric(),
+                      p = numeric(),
+                      moe = numeric())
+
+for (n in nvalues){
+  for (p in pvalues){
+    sample.proportions <- rbinom(polls, size = n, prob = p)/n
+    quant <- quantile(sample.proportions, probs = c(0.025, 0.975))
+    moe <- (quant[2]-quant[1])/2
+    
+    new.results <- bind_rows(new.results,
+                             tibble(n = n, p = p, moe = moe))
+    
+  }
+}
+view(new.results)
+
+ggplot()+
+  geom_raster(data = new.results, aes(x = n, y = p, fill = moe))+
+  scale_fill_viridis_c(name = "Margin of Error")+
+  theme_bw()+
+  labs(
+    title = "Estimated Margin of Error as a Function of n and p",
+    x = "Sample Size (n)",
+    y = "True Proportion (p)"
+  )
 
