@@ -48,15 +48,9 @@ This document provides a basic template for the 2-page labs we will complete eac
 
 \section{Introduction}
 
+Gallup published a document called \emph{``How are Polls Conducted?"}. It outlines how Gallup selects people to include in its poll as well as other details. Focusing on two excerpts describing sample sizes of 1,000 and then 2,000, Gallup highlights how the results are accurate within a certain margin of error (\(\pm 4\% \) for n = 1000 and \(\pm 2\% \) for n = 2000). This margin of error tells researchers how much they can expect the sample proportion to differentiate from the proportion for the entire population. The goal of statisticians and quantitative researchers is to report a margin of error that provides 95\% confidence meaning they are 95\% confident that if they were to conduct the poll repeatably, they would contain the actual proportion 95\% of the time on the interval. 
 
-Provide an overarching summary of what you're talking about. In this section, you introduce the idea to the reader, and your goal is to pull them in. What's the mystery you aim to solve?
-
-You want to provide enough background to understand the context of the work. Specifically, what is the question you are addressing? If it applies, describe what information currently exists about this problem, including citations, and explain how the question you're answering complements this work.
-
-Provide a roadmap of the structure of the paper. 
-
-\subsection{Intro Subsection}
-You might need/want to discuss the topics in subsections. Or, you may have multiple questions.
+The goal of this lab is to explore how sample size affects the margin of error as well as estimate this accurately. We will explore different simulations of different sample sizes and look at the differences in margins of errors through various mediums.
 
 \section{Methods}
 Describe the data you are working with, if applicable. Describe the specific process you will follow to answer the question at hand. This does not mean you should write something like this.
@@ -101,9 +95,5 @@ you cite them in your document, the bibliography section will automatically popu
 \onecolumn
 \section{Appendix}
 
-\begin{Figure}
-\includegraphics{combinedplot.png}
-\captionof{figure}{Plots of Margin of Error} \label{fig:figure1}
-\end{Figure}
 
 \end{document}
