@@ -128,7 +128,7 @@ table2 <- tibble(
   `Range of middle 95%` = re.range.middle, 
   `Margin of Error` = re.margin.error
 )
-
+view(table2)
 ################################################################################
 # Part 3: Simulation over n and p
 ################################################################################
@@ -147,14 +147,16 @@ for (n in nvalues){
     moe <- (quant[2]-quant[1])/2
     
     new.results <- bind_rows(new.results,
-                             tibble(n = n, p = p, moe = moe))
-    
+                             tibble(n = n, 
+                                    p = p, 
+                                    moe = moe))
   }
 }
 view(new.results)
 
-ggplot()+
-  geom_raster(data = new.results, aes(x = n, y = p, fill = moe))+
+estimated.plot <- ggplot()+
+  geom_raster(data = new.results, 
+              aes(x = n, y = p, fill = moe))+
   scale_fill_viridis_c(name = "Margin of Error")+
   theme_bw()+
   labs(
@@ -163,3 +165,47 @@ ggplot()+
     y = "True Proportion (p)"
   )
 
+################################################################################
+# Part 4: Actual Margin of Error Calculation
+################################################################################
+
+# Compute Wilson Margin of Error
+nvalues <- seq(100, 3000, by = 10)
+pvalues <- seq(0.01, 0.99, by = 0.01)
+?qnorm
+z <- qnorm(0.975) # z sub 1-alpha-2
+
+wilson.results <- tibble(n = numeric(),
+                         p = numeric(),
+                         moe2 = numeric())
+
+for (n in nvalues){
+  for (p in pvalues){
+    moe2 <- (sqrt( n*p*(1-p) + (z^2/4)))/
+           (n +z^2)
+    wilson.results <- bind_rows(wilson.results,
+                                tibble(n = n, 
+                                       p = p, 
+                                       moe2 = moe2))
+  }
+}
+view(wilson.results)
+
+wilson.plot <- ggplot()+
+  geom_raster(data = wilson.results, 
+              aes(x = n, y = p, fill = moe2))+
+  scale_fill_viridis_c(name = "Margin of Error")+
+  theme_bw()+
+  labs(
+    title = "Wilson Margin of Error as a Function of n and p",
+    x = "Sample Size (n)",
+    y = "True Proportion (p)"
+  )
+
+
+## Comparison of geom_raster() plots
+library(patchwork)
+compared <- estimated.plot + wilson.plot 
+
+# Wilson margin of error is a lot smaller that the estimated margin of error 
+# when sample size is small (both are still dependent on p)
