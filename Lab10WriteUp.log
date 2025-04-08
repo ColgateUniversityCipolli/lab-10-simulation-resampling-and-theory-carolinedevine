@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.23)  8 APR 2025 11:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.23)  8 APR 2025 12:02
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -455,24 +455,27 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 LaTeX Warning: Reference `table.1' on page 2 undefined on input line 131.
 
+
+LaTeX Warning: Reference `table.2' on page 2 undefined on input line 152.
+
 No file Lab10WriteUp.bbl.
 
 
 [2]
-<figure/unnamed-chunk-4-1.pdf, id=89, 505.89pt x 289.08pt>
+<figure/unnamed-chunk-4-1.pdf, id=91, 505.89pt x 289.08pt>
 File: figure/unnamed-chunk-4-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-4-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-4-1.pdf  used on input line 213.
+Package pdftex.def Info: figure/unnamed-chunk-4-1.pdf  used on input line 207.
 (pdftex.def)             Requested size: 505.88875pt x 289.0837pt.
-<figure/unnamed-chunk-5-1.pdf, id=90, 505.89pt x 289.08pt>
+<figure/unnamed-chunk-5-1.pdf, id=92, 505.89pt x 289.08pt>
 File: figure/unnamed-chunk-5-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-5-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-5-1.pdf  used on input line 230.
+Package pdftex.def Info: figure/unnamed-chunk-5-1.pdf  used on input line 224.
 (pdftex.def)             Requested size: 505.88875pt x 289.0837pt.
-<figure/unnamed-chunk-6-1.pdf, id=91, 794.97pt x 614.295pt>
+<figure/unnamed-chunk-6-1.pdf, id=93, 794.97pt x 614.295pt>
 File: figure/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use figure/unnamed-chunk-6-1.pdf>
-Package pdftex.def Info: figure/unnamed-chunk-6-1.pdf  used on input line 248.
+Package pdftex.def Info: figure/unnamed-chunk-6-1.pdf  used on input line 242.
 (pdftex.def)             Requested size: 542.02501pt x 418.84924pt.
 
 
@@ -489,21 +492,21 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Lab10WriteUp.out' has not changed.
-(rerunfilecheck)             Checksum: 97DA08539A689CC2036A73A143E92D65;1853.
+(rerunfilecheck)             Checksum: DD2CA778CE50A34F392E94E2E299EDDF;1770.
  ) 
 Here is how much of TeX's memory you used:
- 12289 strings out of 475172
- 197141 string characters out of 5764421
- 623032 words of memory out of 5000000
+ 12288 strings out of 475172
+ 197120 string characters out of 5764421
+ 624032 words of memory out of 5000000
  35113 multiletter control sequences out of 15000+600000
  569581 words of font info for 78 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  75i,9n,79p,1048b,588s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></Users/carolinedevine/Library/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Lab10WriteUp.pdf (4 pages, 285315 bytes).
+Output written on Lab10WriteUp.pdf (4 pages, 286902 bytes).
 PDF statistics:
  212 PDF objects out of 1000 (max. 8388607)
  154 compressed objects within 2 object streams
- 23 named destinations out of 1000 (max. 500000)
- 120 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 22 named destinations out of 1000 (max. 500000)
+ 112 words of extra memory for PDF output out of 10000 (max. 10000000)
 

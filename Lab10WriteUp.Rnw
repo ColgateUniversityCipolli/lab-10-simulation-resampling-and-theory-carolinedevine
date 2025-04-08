@@ -178,28 +178,25 @@ print(table.1,
       caption.placement = "bottom")
 @
 
-Figure 1
-
-\subsection{resample}
+\subsection{Resampling}
+The 1,000 resamples of the same sample sizes using Gallup's reported survey data to approximate the sampling distribution of the sample propotion resulted in a margin of error around (\(\pm 2.93\% \). The range of the middle 95\% can be seen in Table \ref{table.2}. The margin of error and the shape of the distribution (Figure \ref{plot2}) approximately matches the basic simulation. This reinforces the reliability of Gallup's estimate, but shows there are slight differences. Due to the limited data from Gallup, we were only able to resample with one sample size, meaning we could not double the sample size as we did in the basic simulation. Ultiamtely, this shows that resampling is an efficient tool to estimate sampling distributions and variability when the true population proportion is unknown, which in reality, is typically accurate.
 <<echo=FALSE, eval=TRUE, results="asis">>=
 print(table.2,
       table.placement = "H", 
       include.rownames = FALSE, 
       size = "small", 
       caption.placement = "bottom")
-@ 
-Figure 2
+@
 
-\subsection{simulations + wilson}
-Figure 3
-
-Tie together the Introduction -- where you introduce the problem at hand -- and the methods --  what you propose to do to answer the question. Present your data, the results of your analyses, and how each reported aspect contributes to answering the question. This section should include table(s), statistic(s), and graphical displays. Make sure to put the results in a sensible order and that each result contributes a logical and developed solution. It should not just be a list. Avoid being repetitive. 
-
-\subsection{Results Subsection}
-Subsections can be helpful for the Results section, too. This can be particularly helpful if you have different questions to answer. 
-
+\subsection{Simulations and Wilson Estimate}
+As we increased the sample size (n) and the true population proportion(p), the results of the simulated trials showed that larger sample sizes do reduce the margin of error as seen in the left plot of Figure \ref{plot3}. The darker colors represent low margins of errors and the lighter ones reflect higher margins of errors. Although, the margin of error does not soley depend on the sample size; it also depends on p. Figure \ref{plot3} shows that when p is close to 0 or 1, the margin of error is smaller due to the limitations of the parameter space. This reflects higher variability when the population proportions are close to 50\% and sample sizes are small. This adds a missed refinement to  Gallup's story.
+The actual margin of error calculation, shown in the right plot of Figure \ref{plot3}, reflects similar results across all n and p combinations. The Wilson formula, used to generate the actual margin of error calculation, allows for an analytical check to the simulation approach. The results of both the simulation and analyitcal approach align strongly, with small variations in the simulation approach which can be accounted by sampling error. 
+These results highlight how both simulations and analyziation approaches are accurate, with the Wilson formula method providng more efficient results. 
 
 \section{Discussion}
+By analyzing how different approaches through basic simulation, resampling, simulation, and analytical evalutation, we are able to see how different sample sizes and population proportions affect the margin of error. This is extremmely important for statisticans and quantitative researchers for ensuring that the information they are reporting is accurate. The overall takeaway shows that Gallup is correct that larger sample sizes reduce the margin of error, but missed that the margin of error is also sensitive to the value of the population proportion. 
+
+
  You should objectively evaluate the evidence you found in the data. Do not embellish or wish-terpet (my made-up phase for making an interpretation you, or the researcher, wants to be true without the data \emph{actually} supporting it). Connect your findings to the existing information you provided in the Introduction.
 
 Finally, provide some concluding remarks that tie together the entire paper. Think of the last part of the results as abstract-like. Tell the reader what they just consumed -- what's the takeaway message?
