@@ -66,8 +66,11 @@ To further explore how sample size(n) and the true population proportion(p) affe
 
 \subsection{Part 4: Actual Margin of Error Calculation}
 
-\subsection{Methods Subsection}
-Much like the Introduction, subsections can be helpful for the Methods section. For example, you might describe data collection and the statistical analyses of the collected data in different subsections. Or, you may have different questions that require distinct methods. 
+Estimating the margin of error from simulations is strong, but we can also find the actual margin of error through derivations of the Central Limit Theorem to find the Wilson Estimate analytically. The Wilson Estimate is a weighted average between \(\hat{P} = \frac{X}{n}\) and \(\frac{1}{2}\) where the weights are n and \(Z^2\) respectively. This provides an approximation of the margin of error called the Wilson margin of error formula:
+$$
+z_{1 - \alpha/2} * \frac{ \sqrt{n \hat{p} (1 - \hat{p}) + \frac{z_{1 - \alpha/2}^2}{4}} }{n + z_{1 - \alpha/2}^2}
+$$
+We computed the Wilson margin of error using the same values from part 3 for n and p and plotted them using a heatmap for comparison purposes. We did not need to use simulations for this step.
 
 \section{Results}
 Tie together the Introduction -- where you introduce the problem at hand -- and the methods --  what you propose to do to answer the question. Present your data, the results of your analyses, and how each reported aspect contributes to answering the question. This section should include table(s), statistic(s), and graphical displays. Make sure to put the results in a sensible order and that each result contributes a logical and developed solution. It should not just be a list. Avoid being repetitive. 
