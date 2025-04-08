@@ -41,28 +41,28 @@
 %\raggedcolumns % If your spacing gets messed up try uncommenting 
                 % this line
 \begin{abstract}
-This document provides a basic template for the 2-page labs we will complete each week. Here, briefly summarize what you did and why it might be helpful. Provide all the top-line conclusions, but avoid providing \emph{all} the details. Results should be limited to ``we show X, Y, and Z."
+This lab explores how sample size and population proportion affect the margin of error in polling results. By using four approaches, we analyzed the accuracy of each method: basic simulation, resampling, simulations, and analytical evaluation. Our results highlight that large sample sizes reduce margin of error, but that the margin of error also depends on the population proportion. Additionally, we found that the Wilson margin of error formula is the most efficient and corresponds to the simulations over variations of \emph{n} and \emph{p}. 
 \end{abstract}
 
-\noindent \textbf{Keywords:} What topics does the lab cover concerning class? List 3-4 key terms here, separated by semicolons.
+\noindent \textbf{Keywords:} Satisfaction with Polls, Basic Simulation, Margin of Error Estimates, Wilson's Estimate
 
 \section{Introduction}
 
-Gallup published a document called \emph{``How are Polls Conducted?"}. It outlines how Gallup selects people to include in its poll as well as other details. Focusing on two excerpts describing sample sizes of 1,000 and then 2,000, Gallup highlights how the results are accurate within a certain margin of error (\(\pm 4\% \) for n = 1000 and \(\pm 2\% \) for n = 2000). This margin of error tells researchers how much they can expect the sample proportion to differentiate from the proportion for the entire population. The goal of statisticians and quantitative researchers is to report a margin of error that provides 95\% confidence meaning they are 95\% confident that if they were to conduct the poll repeatably, they would contain the actual proportion 95\% of the time on the interval. The goal of this lab is to explore how sample size affects the margin of error as well as how to estimate this accurately. 
+Gallup published a document called \emph{``How are Polls Conducted?"} \citep{GallupPolls} which outlines how Gallup selects people to include in its poll. Focusing on two excerpts describing sample sizes of 1,004 and then 2,008, Gallup highlights how the results are accurate within a certain margin of error (\(\pm 4\% \) for \emph{n} = 1000 and \(\pm 2\% \) for \emph{n} = 2000). This margin of error tells researchers how much they can expect the sample proportion to differentiate from the proportion for the entire population. The goal of statisticians and quantitative researchers is to report a margin of error that provides 95\% confidence meaning they are 95\% confident that if they were to conduct the poll repeatably, they would contain the actual proportion 95\% of the time on the interval. The goal of this lab is to explore how sample size affects the margin of error as well as how to estimate this accurately. 
 
 \section{Methods}
 We will explore different simulations of different sample sizes and look at the differences in margins of errors through various mediums. To do this, we will look at basic simulation, resampling, simulations over different sample sizes and proportions, and calculate the actual margin of error. 
 
 \subsection{Part 1: Basic Simulations}
-Initially, we conducted a basic simulation study assuming a true probability that someone is satisfied with the position of United States in the world today to use the binomal distribution which measures the number of successes in a fixed number of trials. This was done using \texttt{rbinom()} function in \texttt{R}. We started with a sample size of 1,004 to replicate Gallup's example and doubled it for the second simulation completed. The sample proportion of the satisfied participants for each simulated poll was computed and plotted to visualize the distribution for both simulations. We also estimated the margin of error through calculation of the range of middle 95\% for comparison to Gallup's results. 
+Initially, we conducted a basic simulation study assuming a true probability, \emph{p} = 0.39, that someone is satisfied with the position of United States in the world today to use the binomal distribution which measures the number of successes in a fixed number of trials. This was done using \texttt{rbinom()} function in \texttt{R}. We started with a sample size of 1,004 to replicate Gallup's example and doubled it for the second simulation completed. The sample proportion of the satisfied participants for each simulated poll was computed and plotted to visualize the distribution for both simulations. We also estimated the margin of error through calculation of the range of middle 95\% for comparison to Gallup's results. 
 
 \subsection{Part 2: Resampling}
 
-We assumed a true population proportion \emph{p} in part 1 which allowed us to see how the polls look like under that assumption, but in reality, we do not always know the true population proportion. To remove this assumption, we preform resampling to approximate the sampling distribution of \(\hat{p}\) using the Gallup survey data. This data reported that 39\% of respondents were satisfied with the position of the US in the world today, 59\% were dissatisfied, and 2\% had no opinion. These were categorized into ``satisfied", ``unsatisfied", and ``no opinion" categories for analysis, with the focus on estimating the proportion of respondents who were ``satisfied". Using the same sample size (n = 1004), we preformed 1,000 resamples and plotted them on a histogram with a superimposed density curve for visualization purposes. Margin of error was also calculated for comparison. 
+We assumed a true population proportion \emph{p} in part 1 which allowed us to see how the polls look like under that assumption, but in reality, we do not always know the true population proportion. To remove this assumption, we preform resampling to approximate the sampling distribution of \(\hat{p}\) using the Gallup survey data. This data reported that 39\% of respondents were satisfied with the position of the US in the world today, 59\% were dissatisfied, and 2\% had no opinion. These were categorized into ``satisfied", ``unsatisfied", and ``no opinion" categories for analysis, with the focus on estimating the proportion of respondents who were ``satisfied". Using the same sample size (\emph{n} = 1004), we preformed 1,000 resamples and plotted them on a histogram with a superimposed density curve for visualization purposes. Margin of error was also calculated for comparison. 
 
 \subsection{Part 3: Simulation over n and p}
 
-To further explore how sample size(n) and the true population proportion(p) affects the margin of error, we simulated 10,000 simulations of a combination of increasing sample sizes and proportions. This is similar to the simulations in part 1, but at a larger scale. For each case, we calculated the margin of error using half of the range between the 2.5th and 97.5th percentiles of the sampling distribution. Using \texttt{geom\_raster()} function in \texttt{R} which produces a heatmap, we plotted the margin of error estimates across different values of n and p to visually see how population proportion and sample size affects margin of error.
+To further explore how sample size(\emph{n}) and the true population proportion(\emph{p}) affects the margin of error, we simulated 10,000 simulations of a combination of increasing sample sizes and proportions. This is similar to the simulations in part 1, but at a larger scale. For each case, we calculated the margin of error using half of the range between the 2.5th and 97.5th percentiles of the sampling distribution. Using \texttt{geom\_raster()} function in \texttt{R} which produces a heatmap, we plotted the margin of error estimates across different values of \emph{n} and \emph{p} to visually see how population proportion and sample size affects margin of error.
 
 \subsection{Part 4: Actual Margin of Error Calculation}
 
@@ -70,7 +70,7 @@ Estimating the margin of error from simulations is strong, but we can also find 
 $$
 z_{1 - \alpha/2} * \frac{ \sqrt{n \hat{p} (1 - \hat{p}) + \frac{z_{1 - \alpha/2}^2}{4}} }{n + z_{1 - \alpha/2}^2}
 $$
-We computed the Wilson margin of error using the same values from part 3 for n and p and calculated z to be 1.96 using the standard normal distribution for a 95\% confidence interval. The table of errors were plotted them using a heatmap for comparison purposes. We did not need to use simulations for this step.
+We computed the Wilson margin of error using the same values from part 3 for \emph{n} and \emph{p} and calculated \emph{z} to be 1.96 using the standard normal distribution for a 95\% confidence interval. The table of errors were plotted them using a heatmap for comparison purposes. We did not need to use simulations for this step.
 
 %% CODE FOR PLOTTING IN RESULTS AND APPENDIX %%
  <<echo=FALSE, eval=TRUE, results="asis", message=FALSE, warning=FALSE, size='scriptsize'>>=
@@ -169,7 +169,7 @@ table.2 <- xtable(table2,
 
 \section{Results}
 \subsection{Basic Simulations}
-The basic simulation study's goal was to examine how different sample sizes affects the sampling distribution and thus, the margin of error. Figure \ref{plot1} shows the visual representation of the sampling distrbutions and their density curves. Both appear to be approximately symmetric and bell-shaped. For \texttt{n = 1004}, the distribution is a relatively normal distribution is centered around 0.39. For \texttt{n = 2008}, the distribution has less variability because the spread of the sample proportions is more concentrated. Table \ref{table.1} corresponds to the graphical conclusions showing the margin of error decreasing as sample size increasings, aligning with Gallup's reported margins of error for each sample size. 
+The basic simulation study's goal was to examine how different sample sizes affects the sampling distribution and thus, the margin of error. Figure \ref{plot1} shows the visual representation of the sampling distrbutions and their density curves. Both appear to be approximately symmetric and bell-shaped. For \texttt{n = 1004}, the distribution is a relatively normal distribution is centered around 0.39. For \texttt{n = 2008}, the distribution has less variability because the spread of the sample proportions is more concentrated. Table \ref{Table 1} corresponds to the graphical conclusions showing the margin of error decreasing as sample size increasings, aligning with Gallup's reported margins of error for each sample size. 
 <<echo=FALSE, eval=TRUE, results="asis">>=
 print(table.1,
       table.placement = "H", 
@@ -179,7 +179,7 @@ print(table.1,
 @
 
 \subsection{Resampling}
-The 1,000 resamples of the same sample sizes using Gallup's reported survey data to approximate the sampling distribution of the sample propotion resulted in a margin of error around (\(\pm 2.93\% \). The range of the middle 95\% can be seen in Table \ref{table.2}. The margin of error and the shape of the distribution (Figure \ref{plot2}) approximately matches the basic simulation. This reinforces the reliability of Gallup's estimate, but shows there are slight differences. Due to the limited data from Gallup, we were only able to resample with one sample size, meaning we could not double the sample size as we did in the basic simulation. Ultiamtely, this shows that resampling is an efficient tool to estimate sampling distributions and variability when the true population proportion is unknown, which in reality, is typically accurate.
+The 1,000 resamples of the same sample sizes using Gallup's reported survey data to approximate the sampling distribution of the sample propotion resulted in a margin of error around (\(\pm 2.93\% \). The range of the middle 95\% can be seen in Table \ref{Table 2}. The margin of error and the shape of the distribution (Figure \ref{plot2}) approximately matches the basic simulation. This reinforces the reliability of Gallup's estimate, but shows there are slight differences. Due to the limited data from Gallup, we were only able to resample with one sample size, meaning we could not double the sample size as we did in the basic simulation. Ultimately, this shows that resampling is an efficient tool to estimate sampling distributions and variability when the true population proportion is unknown, which is accurate to real-world situations.
 <<echo=FALSE, eval=TRUE, results="asis">>=
 print(table.2,
       table.placement = "H", 
@@ -189,26 +189,17 @@ print(table.2,
 @
 
 \subsection{Simulations and Wilson Estimate}
-As we increased the sample size (n) and the true population proportion(p), the results of the simulated trials showed that larger sample sizes do reduce the margin of error as seen in the left plot of Figure \ref{plot3}. The darker colors represent low margins of errors and the lighter ones reflect higher margins of errors. Although, the margin of error does not soley depend on the sample size; it also depends on p. Figure \ref{plot3} shows that when p is close to 0 or 1, the margin of error is smaller due to the limitations of the parameter space. This reflects higher variability when the population proportions are close to 50\% and sample sizes are small. This adds a missed refinement to  Gallup's story.
-The actual margin of error calculation, shown in the right plot of Figure \ref{plot3}, reflects similar results across all n and p combinations. The Wilson formula, used to generate the actual margin of error calculation, allows for an analytical check to the simulation approach. The results of both the simulation and analyitcal approach align strongly, with small variations in the simulation approach which can be accounted by sampling error. 
-These results highlight how both simulations and analyziation approaches are accurate, with the Wilson formula method providng more efficient results. 
+As we increased the sample size (\emph{n}) and the true population proportion(\emph{p}), the results of the simulated trials showed that larger sample sizes do reduce the margin of error as seen in the left plot of Figure \ref{plot3}. The darker colors represent low margins of errors and the lighter ones reflect higher margins of errors. Although, the margin of error does not soley depend on the sample size; it also depends on \emph{p}. Figure \ref{plot3} shows that when \emph{p} is close to 0 or 1, the margin of error is smaller due to the limitations of the parameter space. This reflects higher variability when the population proportions are close to 50\% and sample sizes are small. This adds a missed refinement to  Gallup's story.
+The actual margin of error calculation, shown in the right plot of Figure \ref{plot3}, reflects similar results across all \emph{n} and \emph{p} combinations. The Wilson formula, used to generate the actual margin of error calculation, allows for an analytical check to the simulation approach. The results of both the simulation and analyitcal approach strongly align, with small variations in the simulation approach which can be accounted by sampling error. 
+These results highlight how both simulations and analyziation approaches are accurate, with the Wilson formula method providing more efficient results. 
 
 \section{Discussion}
-By analyzing how different approaches through basic simulation, resampling, simulation, and analytical evalutation, we are able to see how different sample sizes and population proportions affect the margin of error. This is extremmely important for statisticans and quantitative researchers for ensuring that the information they are reporting is accurate. The overall takeaway shows that Gallup is correct that larger sample sizes reduce the margin of error, but missed that the margin of error is also sensitive to the value of the population proportion. 
-
-
- You should objectively evaluate the evidence you found in the data. Do not embellish or wish-terpet (my made-up phase for making an interpretation you, or the researcher, wants to be true without the data \emph{actually} supporting it). Connect your findings to the existing information you provided in the Introduction.
-
-Finally, provide some concluding remarks that tie together the entire paper. Think of the last part of the results as abstract-like. Tell the reader what they just consumed -- what's the takeaway message?
+By analyzing how different approaches through basic simulation, resampling, simulation, and analytical evalutation, we are able to see how different sample sizes and population proportions affect the margin of error. This is extremely important for statisticans and quantitative researchers for ensuring that the information they are reporting is accurate. The overall takeaway shows that Gallup is correct that larger sample sizes reduce the margin of error, but missed that the margin of error is also sensitive to the value of the population proportion. This can become an issue if it is overlooked when reporting information about satisfactions with polls in the United States. It is important to report accurate and full information, especially in today's political climate.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace{2em}
-
-\noindent\textbf{Bibliography:} Note that when you add citations to your bib.bib file \emph{and}
-you cite them in your document, the bibliography section will automatically populate here.
-
 \begin{tiny}
 \bibliography{bib}
 \end{tiny}
