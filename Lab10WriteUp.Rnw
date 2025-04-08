@@ -168,9 +168,8 @@ table.2 <- xtable(table2,
 @
 
 \section{Results}
-
-\subsection{basic simulations}
-
+\subsection{Basic Simulations}
+The basic simulation study's goal was to examine how different sample sizes affects the sampling distribution and thus, the margin of error. Figure \ref{plot1} shows the visual representation of the sampling distrbutions and their density curves. Both appear to be approximately symmetric and bell-shaped. For \texttt{n = 1004}, the distribution is a relatively normal distribution is centered around 0.39. For \texttt{n = 2008}, the distribution has less variability because the spread of the sample proportions is more concentrated. Table \ref{table.1} corresponds to the graphical conclusions showing the margin of error decreasing as sample size increasings, aligning with Gallup's reported margins of error for each sample size. 
 <<echo=FALSE, eval=TRUE, results="asis">>=
 print(table.1,
       table.placement = "H", 
@@ -187,6 +186,7 @@ print(table.2,
       table.placement = "H", 
       include.rownames = FALSE, 
       size = "small", 
+      caption.placement = "bottom")
 @ 
 Figure 2
 
