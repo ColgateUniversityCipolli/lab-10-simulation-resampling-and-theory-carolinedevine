@@ -121,12 +121,42 @@ Estimating the margin of error from simulations is strong, but we can also find 
 $$
 z_{1 - \alpha/2} * \frac{ \sqrt{n \hat{p} (1 - \hat{p}) + \frac{z_{1 - \alpha/2}^2}{4}} }{n + z_{1 - \alpha/2}^2}
 $$
-We computed the Wilson margin of error using the same values from part 3 for n and p and plotted them using a heatmap for comparison purposes. We did not need to use simulations for this step.
+We computed the Wilson margin of error using the same values from part 3 for n and p and calculated z to be 1.96 using the standard normal distribution for a 95\% confidence interval. The table of errors were plotted them using a heatmap for comparison purposes. We did not need to use simulations for this step.
 
-\subsection{Methods Subsection}
-Much like the Introduction, subsections can be helpful for the Methods section. For example, you might describe data collection and the statistical analyses of the collected data in different subsections. Or, you may have different questions that require distinct methods. 
+%% CODE FOR PLOTTING IN RESULTS AND APPENDIX %%
+
 
 \section{Results}
+
+\subsection{basic simulations}
+% latex table generated in R 4.4.2 by xtable 1.8-4 package
+% Mon Apr  7 21:30:40 2025
+\begin{table}[H]
+\centering
+\begingroup\small
+\begin{tabular}{rrr}
+  \hline
+Sample Size & Range of middle 95\% & Margin of Error \\ 
+  \hline
+1004.00 & 0.06 & 0.03 \\ 
+  2008.00 & 0.04 & 0.02 \\ 
+   \hline
+\end{tabular}
+\endgroup
+\caption{Margin of Error by Sample Size} 
+\label{Table 1}
+\end{table}
+
+
+Figure 1
+
+\subsection{resample}
+\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in parse(text = input): <text>:5:0: unexpected end of input\\\#\# 3: \ \ \ \ \ \ include.rownames = FALSE, \\\#\# 4: \ \ \ \ \ \ size = "{}small"{}, \\\#\# \ \ \textasciicircum{}}}\end{kframe}
+
+
 Tie together the Introduction -- where you introduce the problem at hand -- and the methods --  what you propose to do to answer the question. Present your data, the results of your analyses, and how each reported aspect contributes to answering the question. This section should include table(s), statistic(s), and graphical displays. Make sure to put the results in a sensible order and that each result contributes a logical and developed solution. It should not just be a list. Avoid being repetitive. 
 
 \subsection{Results Subsection}
@@ -157,6 +187,41 @@ you cite them in your document, the bibliography section will automatically popu
 \newpage
 \onecolumn
 \section{Appendix}
+
+
+\begin{figure}[H]
+\begin{center}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\maxwidth]{figure/unnamed-chunk-4-1} 
+
+}
+
+
+\end{knitrout}
+\caption{Sampling Distributions}
+\label{plot1} 
+\end{center}
+\end{figure}
+
+
+\begin{figure}[H]
+\begin{center}
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\maxwidth]{figure/unnamed-chunk-5-1} 
+
+}
+
+
+\end{knitrout}
+\caption{Resampling Distributions}
+\label{plot2} 
+\end{center}
+\end{figure}
+
 
 
 \end{document}
