@@ -211,26 +211,3 @@ compared <- estimated.plot + wilson.plot
 # when sample size is small (both are still dependent on p)
 
 
-
-# For latex plotting tables and figures
- <<echo=FALSE, eval=TRUE, results="asis", message=FALSE, warning=FALSE, size='scriptsize'>>=
-   
-   # Table with Values
-   table <- xtable(table.results,
-                   caption = "Population-Level Summary by Case", 
-                   label = "Table 1")  # for LaTeX
-   print(table.placement="H",
-       include.rownames=F,
-       caption.placement = "bottom")
- @
-   <<plot1, echo=FALSE, eval=TRUE, message=FALSE, warning=FALSE, size='scriptsize'>>=
-   @
-   \begin{figure}[H]
- \begin{center}
- <<echo=FALSE, warning=FALSE, message=FALSE, fig.dim=c(11,8.5), fig.align='center'>>=
-   four.case.plot
- @
-   \caption{Population Distribution Plot by Case}
- \label{plot1} 
- \end{center}
- \end{figure}
