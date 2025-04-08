@@ -48,17 +48,17 @@ This document provides a basic template for the 2-page labs we will complete eac
 
 \section{Introduction}
 
-Gallup published a document called \emph{``How are Polls Conducted?"}. It outlines how Gallup selects people to include in its poll as well as other details. Focusing on two excerpts describing sample sizes of 1,000 and then 2,000, Gallup highlights how the results are accurate within a certain margin of error (\(\pm 4\% \) for n = 1000 and \(\pm 2\% \) for n = 2000). This margin of error tells researchers how much they can expect the sample proportion to differentiate from the proportion for the entire population. The goal of statisticians and quantitative researchers is to report a margin of error that provides 95\% confidence meaning they are 95\% confident that if they were to conduct the poll repeatably, they would contain the actual proportion 95\% of the time on the interval. 
-
-The goal of this lab is to explore how sample size affects the margin of error as well as estimate this accurately. We will explore different simulations of different sample sizes and look at the differences in margins of errors through various mediums.
+Gallup published a document called \emph{``How are Polls Conducted?"}. It outlines how Gallup selects people to include in its poll as well as other details. Focusing on two excerpts describing sample sizes of 1,000 and then 2,000, Gallup highlights how the results are accurate within a certain margin of error (\(\pm 4\% \) for n = 1000 and \(\pm 2\% \) for n = 2000). This margin of error tells researchers how much they can expect the sample proportion to differentiate from the proportion for the entire population. The goal of statisticians and quantitative researchers is to report a margin of error that provides 95\% confidence meaning they are 95\% confident that if they were to conduct the poll repeatably, they would contain the actual proportion 95\% of the time on the interval. The goal of this lab is to explore how sample size affects the margin of error as well as how to estimate this accurately. 
 
 \section{Methods}
-Describe the data you are working with, if applicable. Describe the specific process you will follow to answer the question at hand. This does not mean you should write something like this.
-\begin{quote}
-\textit{I did this and then I did that and then I did this other thing and then..., and then..., and then...}
-\end{quote}
-Instead, it should provide a clear and concise narrative that flows from the problem specification in the Introduction to how you will approach answering it. This is where I would expect to see some citations for \texttt{R} packages you will use to conduct the statistical analysis reported in the Results section.
+We will explore different simulations of different sample sizes and look at the differences in margins of errors through various mediums. To do this, we will look at basic simulation, resampling, simulations over different sample sizes and proportions, and calculate the actual margin of error. 
 
+\subsection{Part 1: Basic Simulations}
+Initially, we conducted a basic simulation study assuming a true probability that someone is satisfied with the position of United States in the world today to use the binomal distribution which measures the number of successes in a fixed number of trials. This was done using \texttt{rbinom()} function in \texttt{R}. We started with a sample size of 1,004 to replicate Gallup's example and doubled it for the second simulation completed. The sample proportion of the satisfied participants for each simulated poll was computed and plotted to visualize the distribution for both simulations. We also estimated the margin of error through calculation of the range of middle 95\% for comparison to Gallup's results. 
+
+\subsection{Part 2: Resampling}
+
+We assumed a true population proportion \emp{p} in part 1 which allowed us to see how the polls look like under that assumption. To remove this assumption, we preform resampling to approximate the sampling distribution of \hat{p}
 
 \subsection{Methods Subsection}
 Much like the Introduction, subsections can be helpful for the Methods section. For example, you might describe data collection and the statistical analyses of the collected data in different subsections. Or, you may have different questions that require distinct methods. 
