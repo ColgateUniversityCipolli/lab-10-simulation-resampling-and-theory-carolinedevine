@@ -103,11 +103,17 @@ Gallup published a document called \emph{``How are Polls Conducted?"}. It outlin
 
 \section{Methods}
 We will explore different simulations of different sample sizes and look at the differences in margins of errors through various mediums. To do this, we will look at basic simulation, resampling, simulations over different sample sizes and proportions, and calculate the actual margin of error. 
-\begin{quote}
-\textit{I did this and then I did that and then I did this other thing and then..., and then..., and then...}
-\end{quote}
-Instead, it should provide a clear and concise narrative that flows from the problem specification in the Introduction to how you will approach answering it. This is where I would expect to see some citations for \texttt{R} packages you will use to conduct the statistical analysis reported in the Results section.
 
+\subsection{Part 1: Basic Simulations}
+Initially, we conducted a basic simulation study assuming a true probability that someone is satisfied with the position of United States in the world today to use the binomal distribution which measures the number of successes in a fixed number of trials. This was done using \texttt{rbinom()} function in \texttt{R}. We started with a sample size of 1,004 to replicate Gallup's example and doubled it for the second simulation completed. The sample proportion of the satisfied participants for each simulated poll was computed and plotted to visualize the distribution for both simulations. We also estimated the margin of error through calculation of the range of middle 95\% for comparison to Gallup's results. 
+
+\subsection{Part 2: Resampling}
+
+We assumed a true population proportion \emph{p} in part 1 which allowed us to see how the polls look like under that assumption, but in reality, we do not always know the true population proportion. To remove this assumption, we preform resampling to approximate the sampling distribution of \(\hat{p}\) using the Gallup survey data. This data reported that 39\% of respondents were satisfied with the position of the US in the world today, 59\% were dissatisfied, and 2\% had no opinion. These were categorized into ``satisfied", ``unsatisfied", and ``no opinion" categories for analysis, with the focus on estimating the proportion of respondents who were ``satisfied". Using the same sample size (n = 1004), we preformed 1,000 resamples and plotted them on a histogram with a superimposed density curve for visualization purposes. Margin of error was also calculated for comparison. 
+
+\subsection{Part 3: Simulation over n and p}
+
+To further explore how sample size(n) and the true population proportion(p) affects the margin of error, we simulated 10,000 simulations of a combination of increasing sample sizes and proportions. This is similar to the simulations in part 1, but at a larger scale. For each case, we calculated the margin of error using half of the range between the 2.5th and 97.5th percentiles of the sampling distribution. Using \texttt{geom\_raster()} function in \texttt{R} which produces a heatmap, we plotted the margin of error estimates across different values of n and p to visually see how population proportion and sample size affects margin of error.
 
 \subsection{Methods Subsection}
 Much like the Introduction, subsections can be helpful for the Methods section. For example, you might describe data collection and the statistical analyses of the collected data in different subsections. Or, you may have different questions that require distinct methods. 
